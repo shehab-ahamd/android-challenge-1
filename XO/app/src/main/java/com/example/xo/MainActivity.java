@@ -2,13 +2,16 @@ package com.example.xo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class MainActivity extends AppCompatActivity {
+    MediaPlayer mysong;
     Boolean Xturn = true;
     TextView turn;
     int[] Xarray = new int[9];
@@ -18,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+mysong = MediaPlayer.create(Splash.this, R.raw.hary);
+mysong.start();
         final Button zero = findViewById(R.id.button0);
         final Button one = findViewById(R.id.button1);
         final Button two = findViewById(R.id.button2);
@@ -52,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i = 0; i < Oarray.length; i++) {
                     Oarray[i] = 0;
                 }
+
 
             }
         });
@@ -184,67 +189,69 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void chackOwin() {
-    }
-
-
-    public void chackXwin() {
-        Xturn = false;
-        turn.setText("O TURN");
-        if (Xarray[0] == 1 && Xarray[1] == 1 && Xarray[2] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[3] == 1 && Xarray[4] == 1 && Xarray[5] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[6] == 1 && Xarray[7] == 1 && Xarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[0] == 1 && Xarray[3] == 1 && Xarray[6] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[1] == 1 && Xarray[4] == 1 && Xarray[7] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[2] == 1 && Xarray[5] == 1 && Xarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[0] == 1 && Xarray[4] == 1 && Xarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Xarray[2] == 1 && Xarray[4] == 1 && Xarray[6] == 1) {
-            Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
-        }
-
+    private void chackOwin()
+    {
         Xturn = true;
-        turn.setText("X TURN");
-        if (Oarray[0] == 1 && Oarray[1] == 1 && Oarray[2] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+
+            turn.setText("X TURN");
+            if (Oarray[0] == 1 && Oarray[1] == 1 && Oarray[2] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[3] == 1 && Oarray[4] == 1 && Oarray[5] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[6] == 1 && Oarray[7] == 1 && Oarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[0] == 1 && Oarray[3] == 1 && Oarray[6] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[1] == 1 && Oarray[4] == 1 && Oarray[7] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[2] == 1 && Oarray[5] == 1 && Oarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[0] == 1 && Oarray[4] == 1 && Oarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Oarray[2] == 1 && Oarray[4] == 1 && Oarray[6] == 1) {
+                Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+            }
         }
-        if (Oarray[3] == 1 && Oarray[4] == 1 && Oarray[5] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[6] == 1 && Oarray[7] == 1 && Oarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[0] == 1 && Oarray[3] == 1 && Oarray[6] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[1] == 1 && Oarray[4] == 1 && Oarray[7] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[2] == 1 && Oarray[5] == 1 && Oarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[0] == 1 && Oarray[4] == 1 && Oarray[8] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
-        }
-        if (Oarray[2] == 1 && Oarray[4] == 1 && Oarray[6] == 1) {
-            Toast.makeText(MainActivity.this, "O WON!!", Toast.LENGTH_SHORT).show();
+
+
+        public void chackXwin ()
+        {
+            Xturn = false;
+
+            turn.setText("O TURN");
+
+            if (Xarray[0] == 1 && Xarray[1] == 1 && Xarray[2] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[3] == 1 && Xarray[4] == 1 && Xarray[5] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[6] == 1 && Xarray[7] == 1 && Xarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[0] == 1 && Xarray[3] == 1 && Xarray[6] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[1] == 1 && Xarray[4] == 1 && Xarray[7] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[2] == 1 && Xarray[5] == 1 && Xarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[0] == 1 && Xarray[4] == 1 && Xarray[8] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+            if (Xarray[2] == 1 && Xarray[4] == 1 && Xarray[6] == 1) {
+                Toast.makeText(MainActivity.this, "X WON!!", Toast.LENGTH_SHORT).show();
+            }
+
 
         }
-
-
     }
-}
