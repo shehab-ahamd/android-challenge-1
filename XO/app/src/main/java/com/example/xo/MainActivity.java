@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+
     MediaPlayer mysong;
+
     Boolean Xturn = true;
     TextView turn;
     int[] Xarray = new int[9];
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-mysong = MediaPlayer.create(Splash.this, R.raw.hary);
+mysong = MediaPlayer.create(MainActivity.this, R.raw.hary);
 mysong.start();
         final Button zero = findViewById(R.id.button0);
         final Button one = findViewById(R.id.button1);
@@ -254,4 +256,5 @@ mysong.start();
 
 
         }
+
     }
